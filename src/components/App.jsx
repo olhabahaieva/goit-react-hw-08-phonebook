@@ -3,7 +3,7 @@ import Phonebook from './Phonebook/Phonebook';
 import Contacts from './Contacts';
 import { useDispatch} from 'react-redux';
 import { fetchContact } from 'redux/operations';
-import Header from './Header';
+import Header from './Navigation';
 
 export const App = () => {
   const dispatch = useDispatch();
