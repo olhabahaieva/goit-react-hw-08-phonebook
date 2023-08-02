@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import Input from '@mui/material/Input';
+import TextField from '@mui/material/TextField';
 
 function Phonebook() {
   const dispatch = useDispatch();
@@ -60,19 +60,21 @@ function Phonebook() {
           className={css.phonebook}
         >
           <form className={css.form} onSubmit={handleFormSubmit}>
-            <label className={css.label} htmlFor="name">
-              Name
-            </label>
-            <Input
+            <label className={css.label} htmlFor="name"></label>
+            <TextField style={{ width: '350px' }}
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
               type="text"
               name="name"
               value={name}
               onChange={handleInputChange}
             />
-            <label className={css.label} htmlFor="number">
-              Number
-            </label>
-            <Input
+            <label className={css.label} htmlFor="number"></label>
+            <TextField style={{ width: '350px' }}
+              id="outlined-basic"
+              label="Number"
+              variant="outlined"
               type="tel"
               name="number"
               value={number}
