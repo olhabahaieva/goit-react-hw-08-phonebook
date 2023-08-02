@@ -41,7 +41,7 @@ const Contacts = () => {
         <label className={css.label} htmlFor="search">
           Find contacts by name
         </label>
-        <Input
+        <Input style={{ width: '300px' }}
           onChange={handleFilterChange}
           value={filter}
           className={css.filterInput}
