@@ -1,16 +1,19 @@
 .contacts {
-  width: 430px;
+  width: 500px;
   font-size: 18px;
   /* display: flex;
   flex-direction: column; */
-  gap: 8px;
+  column-gap: 8px;
   list-style: none;
+  padding-left: 0;
  
 }
 
 .contact{
+  border-radius:8px;
   background-color: #F9F9F9;
   padding: 8px;
+  margin-bottom: 8px;
 }
 
 .delete {

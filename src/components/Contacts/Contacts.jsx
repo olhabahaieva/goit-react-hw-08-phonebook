@@ -37,7 +37,7 @@ const Contacts = () => {
 
   return (
     <Section title="Contacts">
-      <div className={css.filter}>
+      <div className={css.contacts}>
         <label className={css.label} htmlFor="search">
           Find contacts by name
         </label>
