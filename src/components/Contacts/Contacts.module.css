@@ -10,12 +10,15 @@
 }
 
 .contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius:8px;
   background-color: #F9F9F9;
   padding: 8px;
   margin-bottom: 8px;
 }
-
+/* 
 .delete {
   background-color: white;
   border-radius: 24px;
@@ -30,7 +33,7 @@
   background-color: orangered;
   color: white;
   border: none;
-}
+} */
 
 .label {
   font-size: 18px;

@@ -53,9 +53,8 @@ const Contacts = () => {
         {filteredContacts().map(contact => (
           <li key={contact.id} className={css.contact}>
             {contact.text.name} : {contact.text.number}
-            <Button
+            <Button variant="outlined" color="error"
               onClick={() => handleDeleteClick(contact.id)}
-              // className={css.delete}
             >
               Delete
             </Button>
