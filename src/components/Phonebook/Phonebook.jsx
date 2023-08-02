@@ -4,6 +4,7 @@ import Section from 'components/Section';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
+import Button from '@mui/material/Button';
 
 function Phonebook() {
   const dispatch = useDispatch();
@@ -72,10 +73,9 @@ function Phonebook() {
               value={number}
               onChange={handleInputChange}
             />
-
-            <button className={css.button} name="submit" type="submit">
+            <Button variant="contained" name="submit" type="submit">
               Add contact
-            </button>
+            </Button>
           </form>
         </div>
       </Section>
