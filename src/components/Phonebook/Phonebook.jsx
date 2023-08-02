@@ -5,10 +5,12 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Input from '@mui/material/Input';
 
 function Phonebook() {
   const dispatch = useDispatch();
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector(state => state.contacts.items);
 
   const [state, setState] = useState({
     name: '',
@@ -17,15 +19,15 @@ function Phonebook() {
 
   const { name, number } = state;
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     const { name, value } = event.target;
-    setState((prevState) => ({
+    setState(prevState => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = event => {
     event.preventDefault();
     if (contactAlreadyExists(name, number)) {
       alert(`${name} with number ${number} is already in contacts`);
@@ -37,7 +39,7 @@ function Phonebook() {
 
   const contactAlreadyExists = (name, number) => {
     return contacts.some(
-      (contact) =>
+      contact =>
         contact.text.name.toLowerCase() === name.toLowerCase() &&
         contact.text.number === number
     );
@@ -53,12 +55,15 @@ function Phonebook() {
   return (
     <>
       <Section title="Phonebook">
-        <div className={css.phonebook}>
+        <Box
+          // sx={{ bgcolor: 'primary.white', width: 300 }}
+          className={css.phonebook}
+        >
           <form className={css.form} onSubmit={handleFormSubmit}>
             <label className={css.label} htmlFor="name">
               Name
             </label>
-            <input
+            <Input
               type="text"
               name="name"
               value={name}
@@ -67,7 +72,7 @@ function Phonebook() {
             <label className={css.label} htmlFor="number">
               Number
             </label>
-            <input
+            <Input
               type="tel"
               name="number"
               value={number}
@@ -77,7 +82,7 @@ function Phonebook() {
               Add contact
             </Button>
           </form>
-        </div>
+        </Box>
       </Section>
     </>
   );

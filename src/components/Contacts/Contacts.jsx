@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, selectFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
 import { setFilter } from 'redux/filterSlice';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -39,7 +41,7 @@ const Contacts = () => {
         <label className={css.label} htmlFor="search">
           Find contacts by name
         </label>
-        <input
+        <Input
           onChange={handleFilterChange}
           value={filter}
           className={css.filterInput}
@@ -49,14 +51,14 @@ const Contacts = () => {
 
       <ul className={css.contacts}>
         {filteredContacts().map(contact => (
-          <li key={contact.id}>
+          <li key={contact.id} className={css.contact}>
             {contact.text.name} : {contact.text.number}
-            <button
+            <Button
               onClick={() => handleDeleteClick(contact.id)}
-              className={css.delete}
+              // className={css.delete}
             >
               Delete
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
