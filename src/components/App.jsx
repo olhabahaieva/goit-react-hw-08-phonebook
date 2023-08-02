@@ -3,6 +3,7 @@ import Phonebook from './Phonebook/Phonebook';
 import Contacts from './Contacts';
 import { useDispatch} from 'react-redux';
 import { fetchContact } from 'redux/operations';
+import Header from './Header';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ export const App = () => {
   }, [dispatch]);
 
   return (
+    <>
+    <Header/>
     <div
       style={{
         height: '100vh',
@@ -26,5 +29,6 @@ export const App = () => {
       <Phonebook />
       <Contacts />
     </div>
+    </>
   );
 };

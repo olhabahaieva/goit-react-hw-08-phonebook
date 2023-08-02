@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #f9f9f9;
+    padding: 15px 200px;
+}
+
+.logo{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.buttonContainer{
+    display: flex;
+    gap: 16px;
+    align-items: center
+}
